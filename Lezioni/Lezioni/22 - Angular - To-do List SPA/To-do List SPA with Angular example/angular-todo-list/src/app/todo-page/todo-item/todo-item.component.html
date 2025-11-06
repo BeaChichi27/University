@@ -1,0 +1,14 @@
+<li class="flex items-center flex-wrap content-between w-full px-4 py-2 border-b border-gray-200 rounded-t-lg dark:border-gray-600">
+  <span class="flex-grow">
+    <input type="checkbox" (change)="handleToggleDoneStatus()" [checked]="this.todoItem.done" value="" class="w-4 h-4 mr-2 accent-teal-600 text-white dark:accent-amber-400 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+    {{this.todoItem.todo}}
+  </span>
+  <div class="inline-flex rounded-md shadow-sm text-xs" role="group">
+    <button [routerLink]="editLink" type="button" class="px-4 py-1  font-medium text-gray-900 bg-transparent border border-gray-900 rounded-s-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+      Edit
+    </button>
+    <button (click)="handleDelete()" type="button" class="px-4 py-1 font-medium text-gray-900 bg-transparent border border-gray-900 rounded-e-lg hover:bg-gray-900 hover:text-white focus:z-10 focus:ring-2 focus:ring-gray-500 focus:bg-gray-900 focus:text-white dark:border-white dark:text-white dark:hover:text-white dark:hover:bg-gray-700 dark:focus:bg-gray-700">
+      Delete
+    </button>
+  </div>
+</li>
