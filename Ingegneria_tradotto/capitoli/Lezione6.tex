@@ -1,0 +1,196 @@
+\chapter{Lezione 6 e 7: Statecharts}
+\section{Statechart}
+Conosciuti anche come Macchine a Stati (Comportamentali) UML.
+Ampiamente utilizzati per modellare gli aspetti dinamici dei sistemi (specialmente quelli reattivi).
+Sistemi che reagiscono a eventi (esterni o interni).
+Gli Statechart sono ampiamente utilizzati nell'industria, e non solo per la modellazione.
+
+\subsection{Modellazione con stati e transizioni}
+Gli stati rappresentano situazioni in cui vale una condizione invariante.
+\begin{itemize}
+    \item \textbf{Condizioni statiche:} il sistema è in attesa che qualcosa accada.
+    \item \textbf{Condizioni dinamiche:} il sistema sta eseguendo un compito specifico.
+\end{itemize}
+Le transizioni rappresentano possibili cambiamenti di stato.
+
+\subsection{Regioni, vertici e transizioni}
+Uno Statechart UML contiene una regione di primo livello (top-level).
+Una regione contiene vertici e transizioni.
+I vertici rappresentano gli stati.
+Le transizioni sono rappresentate come archi orientati tra due vertici.
+Esistono diversi tipi di vertici, con semantiche differenti.
+
+\subsection{Stati (semplici)}
+Rappresentano stati del sistema non strutturati.
+Raffigurati come un rettangolo con angoli arrotondati.
+Un compartimento del nome contiene il nome (opzionale) dello stato, come stringa.
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.125\linewidth]{immagini/Lezione6/1.png}
+    \caption{Uno stato semplice}
+\end{figure}
+
+\subsection{Pseudostati iniziali e stati finali}
+Gli pseudostati iniziali sono utilizzati per segnare lo stato predefinito (iniziale).
+Una regione può contenere al massimo uno pseudostato iniziale.
+Gli stati finali modellano una situazione in cui il calcolo è completato (cioè, il sistema non elaborerà ulteriori eventi).
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.125\linewidth]{immagini/Lezione6/2.png}
+    \caption{Pseudostato e stato iniziale}
+\end{figure}
+
+\subsection{Sintassi delle transizioni}
+Le transizioni indicano cambiamenti di stato.
+Possono essere decorate con un'etichetta della forma:
+\begin{center}
+    \textit{trigger [guardia] / azioni}
+\end{center}
+\begin{itemize}
+    \item \textit{trigger} (nell'immagine event() è un trigger) è un elenco di eventi che possono indurre un cambiamento di stato.
+    \item \textit{guardia} è una condizione booleana.
+    \item \textit{azioni} è un elenco di operazioni da eseguire quando la transizione si attiva.
+\end{itemize}
+Tutte le parti sopra indicate dell'etichetta sono opzionali.
+Sono possibili auto-transizioni (self-transitions).
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.25\linewidth]{immagini/Lezione6/3.png}
+    \caption{trigger [guardia] / azioni}
+\end{figure}
+\subsection{Semantica delle transizioni}
+Affinché una transizione possa essere attivata:
+\begin{itemize}
+    \item Devono essere generati eventi corrispondenti a tutti i trigger;
+    \item La condizione nella guardia deve essere valutata come VERA.
+\end{itemize}
+Una transizione spontanea è una transizione senza trigger e senza guardia.
+Dopo che una transizione viene attivata, la sua lista associata di azioni viene eseguita.
+Se più transizioni sono attivabili, solo una di esse viene effettivamente attivata (in modo non deterministico).
+Seguono degli esempi.
+\includepdf[pages=-]{esempi/esempio6.pdf}
+
+\subsection{Attività interne degli stati}
+Gli stati possono (opzionalmente) contenere una lista di attività interne.
+Ogni attività è caratterizzata da un'etichetta che indica quando l'attività deve essere invocata.
+Etichette riservate:
+\begin{itemize}
+    \item \textbf{entry /} attività eseguita all'ingresso dello stato
+    \item \textbf{do /} attività eseguita finché il sistema si trova nello stato (dopo il completamento delle attività di entry)
+    \item \textbf{exit /} attività eseguita all'uscita dallo stato
+\end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.25\linewidth]{immagini/Lezione6/4.png}
+    \caption{Attività interne}
+\end{figure}
+
+\subsection{Stati composti}
+
+Uno stato può contenere:
+\begin{itemize}
+    \item un compartimento per il nome
+    \item un compartimento per le attività interne
+    \item una o più regioni interne!
+\end{itemize}
+Uno stato con regioni interne è uno stato composto.
+Gli stati in una regione interna sono chiamati sottostati.
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.25\linewidth]{immagini/Lezione6/5.png}
+    \caption{Stato composto}
+\end{figure}
+Permettono ai modellatori di definire una struttura gerarchica.
+La regione interna dettaglia il comportamento dello stato a cui appartiene.
+Forniscono un modo elegante e conciso per modellare comportamenti complessi (e nascondere la complessità quando non è necessaria).
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.25\linewidth]{immagini/Lezione6/6.png}
+    \caption{Stato composto 2}
+    \label{fig:placeholder}
+\end{figure}
+\newpage
+\subsection{Regioni parallele}
+
+Gli stati composti possono contenere più regioni, rappresentando comportamenti che possono verificarsi in parallelo.
+Quando si esce da uno stato composto, tutte le sue regioni vengono terminate.
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/Lezione6/7.png}
+    \caption{Regioni parallele}
+\end{figure}
+\subsection{Pseudostati di Shallow History}
+
+Raffigurati come una H (circondata da un cerchio).
+Rappresenta lo stato più recentemente attivo di uno stato composto, ma non i sottostati di quello stato!
+Solo negli stati composti, e solo uno per regione.
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/Lezione6/8.png}
+    \caption{Shallow history}
+\end{figure}
+
+\subsection{Pseudostati di Deep History}
+
+Raffigurati come una H* (sempre circondata da un cerchio).
+Stessa funzione di quelli di shallow history, ma ripristina l'intera configurazione della regione (sottostati dei sottostati inclusi!).
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/Lezione6/9.png}
+    \caption{Deep History}
+\end{figure}
+\newpage
+\subsection{Pseudostati Fork e Join}
+\begin{itemize}
+    \item I Fork dividono le transizioni in ingresso in più transizioni che entrano in vertici in regioni ortogonali.
+    \item I Join uniscono le transizioni in uscita da vertici in regioni ortogonali in un'unica transizione.
+\end{itemize}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{immagini/Lezione6/10.png}
+    \caption{Fork e Join}
+\end{figure}
+
+\subsection{Consigli e trucchi per gli Statechart}
+
+Ogni stato dovrebbe tipicamente avere almeno una transizione in entrata e una in uscita.
+I diagrammi sono tipicamente letti dall'alto a sinistra verso il basso a destra, quindi posizionare gli pseudostati iniziali/finali di conseguenza!
+Se più stati hanno una condizione di ingresso e/o uscita comune, considerare l'uso di stati composti.
+Assicurarsi di non modellare il non-determinismo, a meno che non sia ciò di cui si ha veramente bisogno!
+Al massimo uno stato può essere attivo in una regione in qualsiasi momento!
+
+\section{Statecharts nel mondo reale}
+\subsection{Model-driven Development}
+
+Passo successivo nella tendenza all'aumento dell'astrazione
+Standard de-facto in molti domini del software embedded (es: automotive)
+Grazie a strumenti come Simulink, è possibile simulare modelli Statechart, generare automaticamente codice e test, e molto altro (es: metodi formali!)
+
+\noindent\textbf{Vantaggi}
+\begin{itemize}
+    \item In alcuni domini, tipicamente più conveniente, più veloce e porta a una qualità superiore
+    \item Modelli comprensibili da esperti di dominio
+    \item I modelli sono documentazione!
+    \item Minore dipendenza dalla tecnologia
+    \item Minore dipendenza dal personale
+\end{itemize}
+
+\noindent\textbf{Svantaggi}
+\begin{itemize}
+    \item Gli strumenti sono costosi
+    \item Non abbastanza flessibili per alcune applications
+    \item La generazione di codice è tipicamente supportata per un numero limitato di piattaforme
+\end{itemize}
+
+\subsection{Gestione degli stati dell'interfaccia utente con Statecharts}
+
+Gli Statechart possono anche essere utilizzati per «guidare» la logica della GUI
+Gli Statechart sono più facili da comprendere (rispetto al codice!)
+Il comportamento è disaccoppiato dai componenti GUI
+Separare il QUANDO (codificato nello Statechart) dal COSA (cosa dovrebbe accadere, codificato nel componente UI)
+Gli Statechart scalano bene con la crescita della complessità
+
+\includepdf[pages=-, addtotoc={1,section,1,Esempio, L1:2}]{esempi/esempio6-1.pdf}
+\includepdf[pages=-, addtotoc={1,section,1,Esercizi, L1:3}]{esercizi/lezione6.pdf}
