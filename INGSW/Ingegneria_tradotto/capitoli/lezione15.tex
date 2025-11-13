@@ -1,0 +1,235 @@
+\chapter{Lezione 15: Teoria dei colori, tipografia e psicologia di Gestalt}
+
+\section{Percezione del colore tramite i coni}
+Non tutti i coni sono uguali. Esistono 3 tipi diversi, con fotopigmenti specializzati per percepire il colore: blu, verde e rosso. Ogni tipo di cono è sensibile a una diversa banda dello spettro luminoso. Il rapporto di stimolazione neurale tra i tre tipi ci dà una percezione continua dei colori.
+
+I tipi di coni non sono distribuiti uniformemente al centro della retina: principalmente rossi, pochissimi blu. Sensibilità limitata alle lunghezze d'onda corte, alta sensibilità a quelle lunghe. Pochi coni blu al centro della retina, è più difficile mettere a fuoco piccoli oggetti blu. Con l'età, il cristallino tende ad assorbire più lunghezze d'onda corte, riducendo ulteriormente la sensibilità ai blu.
+
+\section{Modelli di colore}
+I modelli di colore sono modelli matematici astratti che descrivono come i colori possono essere rappresentati tramite tuple di numeri. Due schemi di colore ampiamente utilizzati sono:
+\begin{itemize}
+    \item CMYK
+    \item RGB
+\end{itemize}
+
+\subsection{Modello di colore CMYK}
+Il CMYK è un modello di colore sottrattivo. Utilizza: Ciano, Magenta, Giallo, Key (nero). È generalmente usato per materiali stampati. Utilizza pigmenti d'inchiostro per mostrare il colore. I colori risultano dalla luce riflessa.
+
+\subsection{Modello di colore RGB}
+L'RGB è un modello di colore additivo. Utilizza Rosso, Verde, Blu. È pensato per i display dei computer. Utilizza la luce per mostrare il colore. Il colore risulta dalla luce emessa. I display non possono produrre diversi canali di colore nella stessa posizione: la griglia dei pixel è tipicamente divisa in regioni di colore singolo (subpixel), che contribuiscono al colore visualizzato quando osservate a distanza.
+
+\section{Dimensioni percettive del colore}
+HSL (Hue, Saturation, Lightness) è una delle rappresentazioni più comuni dei colori nel modello RGB.
+
+\subsection{Hue}
+La tonalità (\textit{Hue}) è la lunghezza d'onda dominante in un colore. In HSL, è un valore tra 0 e 360:
+\begin{itemize}
+    \item 0 (e 360) è rosso
+    \item 60 è giallo
+    \item 120 è verde
+    \item 180 è ciano
+    \item 240 è blu
+    \item 300 è magenta
+\end{itemize}
+
+\subsection{Saturazione}
+Indica quanto il colore è «intenso».
+\begin{itemize}
+    \item Tipicamente è una percentuale tra 0 e 100
+    \item 100\% significa che il colore è brillante e puro
+    \item 80\% significa che il colore è miscelato con il 20\% di grigio
+    \item 0\% significa che si ottiene solo il grigio
+\end{itemize}
+
+\subsection{Luminosità}
+La luminosità (\textit{Lightness}) indica quanta luce ha il colore.
+\begin{itemize}
+    \item 0\% è molto scuro (nero)
+    \item 50\% è a metà, né troppo scuro né troppo brillante
+    \item 100\% è molto brillante (bianco)
+\end{itemize}
+
+\subsection{Rappresentazione HSL}
+HSL è un modello a coordinate cilindriche. Definendo Hue, Saturation e Lightness, si identifica un punto nello spazio cilindrico.
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{immagini/lezione15/1.png}
+    \caption{Rappresentazione cilindrica di HSL}
+\end{figure}
+
+\subsection{Tinte, sfumature e toni}
+\begin{itemize}
+    \item Una tinta (\textit{tint}) è una miscela di un colore con il bianco, aumentando la luminosità
+    \item Una sfumatura (\textit{shade}) è una miscela con il nero, diminuendo la luminosità
+    \item Un tono (\textit{tone}) è una miscela con il grigio
+\end{itemize}
+
+\section{Uso dei colori nel design delle interfacce}
+Il colore è uno strumento potente nell’arsenale di un designer di UI.
+\begin{itemize}
+    \item Può far risaltare alcuni elementi (vedremo di più su questo alla fine della lezione)
+    \item Può trasmettere significato (ma attenzione alle differenze regionali!)
+\end{itemize}
+
+Quindi, più colori ci sono, meglio è?
+\begin{itemize}
+    \item Non proprio. Una UI dovrebbe generalmente includere non più di 6 colori diversi.
+    \item Corollario: scegli una palette e sii coerente!
+\end{itemize}
+
+Una buona regola pratica è la regola del 60-30-10:
+\begin{itemize}
+    \item 60\% colore primario
+    \item 30\% colore secondario
+    \item 10\% colore d’accento (per le parti che vogliamo far risaltare)
+\end{itemize}
+
+\subsection{Teoria del colore}
+Non tutti i colori «stanno bene» insieme. Possiamo usare le armonie cromatiche per costruire palette (insiemi di colori) per la nostra UI che non siano in contrasto tra loro.
+\begin{itemize}
+    \item Monocromatica
+    \item Analoghi
+    \item Complementari
+    \item Complementari suddivisi
+    \item Triadica
+\end{itemize}
+
+\includepdf[pages=-, addtotoc={
+    1, subsection, 1, Armonie monocromatiche, L7:1,
+    2, subsection, 1, Armonie analoghe, L7:2,
+    3, subsection, 1, Armonie complementari, L7:3,
+    4, subsection, 1, Armonie complementari suddivise, L7:4,
+    5, subsection, 1, Armonie triadiche, L7:5,
+    6, subsection, 1, Riferimenti: Armonie cromatiche, L7:6
+}]{esempi/lezione15.pdf}
+
+\subsection{Psicologia del colore}
+La mente umana può reagire inconsciamente ai colori (psicologia del colore).
+\begin{itemize}
+    \item Il nero è associato a eleganza, potere e autorità
+    \item Il blu è percepito come autorevole, affidabile, degno di fiducia
+    \item Il rosso può essere associato a passione, desiderio, amore, energia, pericolo
+    \item Il verde può essere associato a natura, freschezza, serenità, salute, denaro
+\end{itemize}
+Non ci sono molte ricerche che dimostrano l’effetto reale di un colore sulle emozioni.
+Inoltre, tieni presente che esistono differenze regionali! In Cina, il rosso è il colore associato al denaro. Negli Stati Uniti, è il verde.
+
+\section{Tipografia}
+\subsection{L’ipotesi dei serif}
+I caratteri con grazie (\textit{serif}) \textbf{sono più facili da leggere} – e quindi preferibili per lunghi testi – perché le grazie forniscono ancoraggi che guidano l’occhio del lettore.
+I font senza grazie (\textit{sans serif}) mancano di questi ancoraggi e sono quindi meno adatti per lunghi testi.
+In pratica, le differenze individuali superano qualsiasi effetto della presenza/assenza di grazie, cioè alcune persone leggono più velocemente di altre.
+
+\subsection{Impatto della tipografia nelle UI}
+La tipografia può essere un buon modo per veicolare messaggi nelle interfacce.
+\begin{itemize}
+    \item Leggere non significa solo riconoscere sequenze di lettere
+    \item La tipografia può trasmettere messaggi aggiuntivi:
+    \begin{itemize}
+        \item «Questo è pensato per essere facile da leggere»
+        \item «Questo è un messaggio giocoso»
+        \item «Questo può essere percepito come codice sorgente»
+    \end{itemize}
+\end{itemize}
+La leggibilità è un aspetto importante dell’usabilità.
+\begin{itemize}
+    \item Gli utenti devono leggere etichette e informazioni nelle nostre UI
+    \item La tipografia gioca un ruolo importante nella facilità di lettura. Anche l’aspetto delle parole può essere importante.
+\end{itemize}
+
+\subsection{Effetto di superiorità della parola}
+A volte, i lettori riconoscono una parola dalla sua forma, prima ancora di riconoscere le lettere che la compongono.
+Questo è chiamato «Effetto di superiorità della parola» in psicologia cognitiva.
+Le persone generalmente leggono il testo latino minuscolo più velocemente di quello maiuscolo.
+Non usare il maiuscolo per lunghi testi!
+
+\section{Teoria della percezione Gestalt}
+\textbf{La teoria della percezione Gestalt} (nota anche come psicologia della Gestalt) si concentra su come la mente umana elabora le informazioni visive.
+La psicologia della Gestalt si riferisce all’idea di insieme unificato.
+\begin{itemize}
+    \item Generalmente percepiamo qualcosa di diverso dalla semplice somma degli elementi che vediamo
+    \item Diamo significato alla somma delle parti piuttosto che ai singoli elementi
+\end{itemize}
+
+Quindi, cosa vedi nell’immagine qui sotto?
+\begin{itemize}
+    \item Un triangolo bianco sopra
+    \item Un triangolo con bordi neri sotto
+    \item Tre cerchi neri parzialmente coperti
+\end{itemize}
+Perché non vediamo solo un insieme di linee e macchie?
+La nostra mente tende a completare oggetti incompleti e a vedere connessioni tra elementi in base alla loro apparenza o posizione relativa.
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{immagini/lezione15/2.png}
+    \caption{Gestalt in azione}
+\end{figure}
+
+\subsection{Psicologia della Gestalt}
+La psicologia della Gestalt studia queste tendenze della nostra mente e come si manifestano.
+Queste tendenze sono talvolta chiamate \textbf{«leggi della percezione»}.
+\begin{itemize}
+    \item Non sono vere leggi, ma principi o euristiche importanti
+    \item Nelle prossime slide vedremo alcuni di questi principi
+    \item Capendoli, possiamo usarli per rendere le nostre UI più intuitive
+    \item Vogliamo che le nostre UI lavorino con, e non contro, il modo in cui il cervello elabora gli stimoli visivi
+\end{itemize}
+
+\section{Principi della Gestalt}
+\subsection{Somiglianza}
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.5\textwidth]{immagini/lezione15/3.png}
+    \caption{Forme righe-colonne}
+\end{figure}
+Scommetto che hai interpretato l’immagine sopra come quattro colonne e non tre righe.
+Gli elementi che condividono una caratteristica visiva sono percepiti come più correlati rispetto agli elementi dissimili.
+Le caratteristiche visive possono essere forme, dimensioni, colori, font, movimento, orientamento...
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{immagini/lezione15/4.png}
+    \caption{Aggiungendo un colore...}
+\end{figure}
+
+Aggiungendo un’altra caratteristica visiva (colore), la percezione può cambiare.
+Probabilmente ora vedi tre righe.
+La somiglianza cromatica spesso prevale su altre caratteristiche visive.
+
+\subsection{Somiglianza nelle UI}
+La somiglianza può essere usata per raggruppare elementi correlati.
+\begin{itemize}
+    \item Se vuoi che elementi diversi siano percepiti come raggruppati e correlati, puoi farli condividere una o più caratteristiche visive
+    \item Può essere usata per comunicare funzionalità comuni (ad esempio: pensa ai colori per segnalare i link nelle pagine web)
+\end{itemize}
+La somiglianza può anche essere usata per enfatizzare le differenze.
+
+\includepdf[pages=-, addtotoc={1, subsection, 1, Prossimità, L7:9}]{esempi/lezione15-1.pdf}
+
+\subsection{Prossimità: moduli}
+Moduli lunghi con molti campi di input possono sembrare \textbf{opprimenti}.
+Raggruppare i campi correlati aiuta gli utenti a comprendere le informazioni da inserire.
+Lo spazio è un modo per raggruppare i campi correlati.
+
+\subsection{Prossimità: posizionamento delle etichette nei moduli}
+L’approccio più sicuro è posizionare le etichette sopra i campi di input.
+Se vuoi moduli più compatti, considera di posizionare le etichette a sinistra dei campi.
+\begin{itemize}
+    \item Le etichette dovrebbero avere lunghezza simile e non essere troppo distanti dai campi
+    \item Le etichette allineate a destra sono note per \href{https://www.nngroup.com/articles/right-justified-navigation-menus/}{ostacolare la scansione}
+\end{itemize}
+Attenzione a non raggruppare elementi non correlati!
+Può nascondere elementi non correlati, rendendoli meno visibili.
+
+\includepdf[pages=-, addtotoc={
+    1, subsection, 1, Proximity can backfire: example , L7:10,
+    5, subsection, 1, Principle of Connectedness, L7:11,
+    12, subsection, 1, Principle of Common Region, L7:12,
+    15, subsection, 1, Principle of Common Region: examples, L7:13,
+    17, section, 1, Visual Hierarchy in UI Design , L7:14,
+    20, subsection, 1, Creating a Visual Hierarchy, L7:15,
+    21, subsection, 1, Scala, L7:16,
+    22, subsection, 1, Colore/Contrasto, L7:17,
+    23, subsection, 1, Raggruppamento, L7:18
+}]{esempi/lezione15-2.pdf}

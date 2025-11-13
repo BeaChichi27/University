@@ -1,0 +1,298 @@
+\chapter{Lezione 17: Linee guida e principi nell'Interazione Uomo-Macchina}
+
+\section{Linee guida e principi nell'HCI}
+Linee guida e principi per un buon design delle interfacce sono stati sviluppati nel corso degli anni.
+Queste linee guida sono applicabili alla maggior parte dei sistemi interattivi.
+Derivano dall'esperienza e sono state affinate nel tempo.
+Non pretendono di essere complete o universali.
+Richiedono validazione e adattamento per domini di design specifici.
+Sono comunque utili per studenti e professionisti.
+
+Le linee guida e i principi possono essere utili:
+\begin{itemize}
+    \item Per guidare la fase di progettazione
+    \item Per valutare una UI e trovare problemi di usabilità (vedremo tra qualche lezione)
+\end{itemize}
+Esistono sovrapposizioni tra i diversi insiemi di linee guida/principi, come temi ricorrenti: prevenire errori, minimizzare il carico di memoria, ...
+
+\section{Le otto regole d'oro di Shneiderman}
+\begin{enumerate}
+    \item Cerca la coerenza
+    \item Punta all'usabilità universale
+    \item Offri feedback informativo
+    \item Progetta dialoghi che portino a una conclusione
+    \item Previeni gli errori
+    \item Permetti la facile reversibilità delle azioni
+    \item Mantieni l'utente al controllo
+    \item Riduci il carico di memoria a breve termine
+\end{enumerate}
+
+\subsection{Le dieci euristiche di usabilità Nielsen-Molich}
+\begin{enumerate}
+    \item Dialogo semplice e naturale
+    \item Parla la lingua dell'utente
+    \item Minimizza il carico di memoria dell'utente
+    \item Coerenza
+    \item Feedback
+    \item Uscite chiaramente indicate
+    \item Scorciatoie
+    \item Buoni messaggi di errore
+    \item Prevenzione degli errori
+    \item Aiuto e documentazione
+\end{enumerate}
+
+\subsection{Dialogo semplice e naturale}
+La UI dovrebbe essere il più semplice possibile (ma non troppo!).
+\begin{itemize}
+    \item Meno è meglio: ogni funzionalità/informazione aggiuntiva è qualcosa in più da imparare, fraintendere o cercare
+    \item Gli utenti inesperti possono sentirsi sopraffatti da troppe informazioni
+    \item Legge di Hick!
+\end{itemize}
+La UI dovrebbe corrispondere il più naturalmente possibile al compito dell'utente (mapping e metafore!).
+\begin{itemize}
+    \item La versione digitale di un modulo è organizzata come quella cartacea
+    \item Un'app bussola funziona come una bussola reale
+\end{itemize}
+
+\section{Parla la lingua dell'utente}
+Il dialogo dovrebbe essere espresso con parole, frasi e concetti familiari all'utente, non con termini orientati al sistema (design centrato sull'uomo!).
+I dialoghi dovrebbero essere nella lingua madre dell'utente (localizzazione), non solo nel testo ma anche negli elementi non verbali come le icone!
+Attenzione alle parole che usi.
+\begin{itemize}
+    \item Se progetti per il pubblico generale, usa parole che tutti comprendono, con il loro significato standard
+    \item Se progetti per un gruppo con una terminologia specifica, usa i termini specializzati
+\end{itemize}
+
+\subsection{Minimizza il carico di memoria dell'utente}
+I computer ricordano perfettamente, la memoria di lavoro umana molto meno! (Ricordi MHP?)
+La UI dovrebbe sollevare l'utente dal peso della memoria il più possibile.
+Come?
+\begin{itemize}
+    \item Il riconoscimento è meglio del richiamo
+    \item Quando chiedi input agli utenti, descrivi il formato richiesto e fornisci un esempio. Indica esplicitamente i valori ammessi (se ci sono)
+\end{itemize}
+
+\subsection{Minimizza il carico di memoria dell'utente: esempi}
+Gli utenti devono inserire il codice a due lettere di una provincia italiana.
+\begin{itemize}
+    \item Accettare l'input tramite campo di testo richiede agli utenti di ricordare il codice della provincia desiderata
+    \begin{itemize}
+        \item Qual è il codice per Lecce?
+        \item E per Lecco?
+    \end{itemize}
+    \item Usare una lista a discesa con nomi e codici di tutte le province solleva l'utente dal dover ricordare i codici delle 110 province italiane!
+\end{itemize}
+
+\subsection{Coerenza}
+Per essere usabile, un sistema dovrebbe mostrare coerenza interna ed esterna.
+\textbf{Coerenza interna} (all'interno del prodotto o della famiglia di prodotti):
+\begin{itemize}
+    \item Sequenze di azioni coerenti dovrebbero essere richieste in situazioni simili: cancellare un cliente e cancellare un fornitore dovrebbero richiedere una sequenza simile
+    \item Le stesse informazioni dovrebbero essere presentate nello stesso modo e nella stessa posizione su tutte le schermate
+\end{itemize}
+\textbf{Coerenza esterna} (con le convenzioni consolidate)
+
+\includepdf[pages=-, addtotoc={
+    1, subsection, 1, Coerenza interna: esempi, L8:1,
+    5, subsection, 1, Coerenza esterna, L8:2
+}]{esempi/lezione17.pdf}
+
+\section{Feedback}
+Il sistema dovrebbe informare continuamente l'utente su cosa sta facendo e come interpreta l'input dell'utente.
+\begin{itemize}
+    \item Non solo quando si verificano errori
+    \item Il feedback positivo è importante quanto quello negativo
+    \item Quando possibile, dai feedback anche in caso di errori di sistema
+    \item Il peggior feedback possibile è nessun feedback!
+    \item Il feedback non dovrebbe essere troppo astratto o generico
+\end{itemize}
+
+\subsection{Persistenza del feedback}
+Tipi diversi di feedback possono richiedere diversi livelli di persistenza.
+\begin{itemize}
+    \item Alcuni feedback sono rilevanti solo per la durata di un fenomeno o sono semplici conferme di un'operazione
+    \item Possono scomparire automaticamente (es: messaggi toast)
+    \item Altri (soprattutto avvisi o errori) possono richiedere un riconoscimento esplicito da parte dell'utente
+    \item Altri ancora possono richiedere alta persistenza e diventare parte permanente della UI
+\end{itemize}
+
+\subsection{Feedback e tempi di risposta del sistema}
+Il feedback è cruciale quando i sistemi hanno tempi di risposta lunghi.
+\begin{enumerate}
+    \item Meno di 0,1 secondi: le reazioni sono percepite come istantanee
+    \begin{itemize}
+        \item Nessun feedback richiesto, tranne mostrare il risultato o confermare l'esito
+    \end{itemize}
+    \item Meno di 1 secondo: il flusso di pensiero dell'utente resta ininterrotto
+    \begin{itemize}
+        \item Nessun feedback speciale richiesto (ma non si ha la sensazione di reazione istantanea)
+    \end{itemize}
+    \item 10 secondi: limite per mantenere l'attenzione dell'utente
+    \begin{itemize}
+        \item Il feedback è cruciale per ritardi superiori a 10 secondi
+        \item Fornisci una stima di quando il compito sarà completato (gli utenti vorranno fare altro mentre aspettano)
+        \item Aggiorna frequentemente l'indicatore di progresso
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Labor Perception Bias}
+Il Labor Perception Bias: le persone si fidano e apprezzano di più ciò che percepiscono come frutto di lavoro.
+Tutti odiano aspettare.
+Ma se le aspettative sono alte (es: gestione di denaro, backup o migrazione di dati importanti, analisi e report...), possono diventare scettici se il tempo di attesa è troppo breve!
+\begin{itemize}
+    \item Aggiungere una schermata di lavoro subito dopo un'azione chiave può migliorare l'esperienza utente
+    \item Talvolta vengono aggiunti dai designer dei "inganni benevoli" (es: tempi di caricamento finti): \href{https://www.theatlantic.com/technology/archive/2017/02/why-some-apps-use-fake-progress-bars/517233/}{link all'articolo}
+\end{itemize}
+
+\subsection{Uscite chiaramente indicate e reversibilità delle azioni}
+Gli utenti vogliono sentirsi in controllo dell’interazione.
+Gli utenti commetteranno comunque errori durante l’uso del sistema.
+Il sistema dovrebbe offrire una via d’uscita semplice dalla maggior parte delle situazioni.
+\begin{itemize}
+    \item Se il sistema non riesce a completare l’azione entro 10 secondi, l’utente dovrebbe poter interrompere l’operazione e annullare l’azione
+    \item In operazioni con effetti collaterali, le uscite possono essere offerte tramite una funzione di «Undo» che riporta il sistema allo stato precedente
+\end{itemize}
+
+\subsection{Scorciatoie}
+In generale, l’uso di una UI dovrebbe richiedere la conoscenza di poche regole.
+Gli utenti esperti dovrebbero poter eseguire rapidamente azioni frequenti tramite scorciatoie e acceleratori.
+\begin{itemize}
+    \item Tasti funzione o combinazioni che eseguono un intero comando con una pressione
+    \item Doppio clic su un oggetto per eseguire l’azione più comune su quell’oggetto
+    \item Pulsanti specifici per accedere direttamente a funzioni importanti dove sono più necessarie
+    \item Riutilizzo della cronologia delle interazioni (ripetere rapidamente gli stessi comandi)
+    \item Fornire valori predefiniti nei moduli, quando possibile
+\end{itemize}
+
+\includepdf[pages=-, addtotoc={
+    4, subsection, 1, Linee guida sulle scorciatoie, L8:3
+}]{esempi/lezione17-1.pdf}
+
+\section{Messaggi di errore}
+I messaggi di errore sono fondamentali per l’usabilità.
+\begin{itemize}
+    \item Rappresentano situazioni in cui gli utenti sono in difficoltà e potrebbero non riuscire a raggiungere i propri obiettivi
+    \item Offrono opportunità per aiutare gli utenti a comprendere meglio il sistema. Gli utenti sono generalmente più motivati a prestare attenzione al contenuto dei messaggi di errore
+\end{itemize}
+
+\subsection{Buoni messaggi di errore}
+Secondo Shneiderman, i messaggi di errore dovrebbero seguire quattro regole:
+\begin{enumerate}
+    \item Devono essere formulati in linguaggio chiaro ed evitare codici oscuri
+    \item Devono essere precisi, non vaghi o generici
+    \item Devono aiutare costruttivamente l’utente a risolvere il problema
+    \item Devono essere cortesi e non intimidire o colpevolizzare l’utente
+\end{enumerate}
+
+\includepdf[pages=-]{esempi/lezione17-2.pdf}
+
+\subsection{Buoni messaggi di errore: sii cortese}
+Non intimidire o colpevolizzare l’utente.
+\begin{itemize}
+    \item Gli utenti già si sentono frustrati quando non riescono a raggiungere i propri obiettivi, non serve peggiorare la situazione!
+    \item Evita termini offensivi come: «AZIONE UTENTE ILLEGALE!», «LAVORO ANNULLATO», «PROCESSO TERMINATO», «ERRORE FATALE»
+    \item Cerca di formulare il messaggio di errore in modo da suggerire che il problema è del sistema (in fondo, una buona UI avrebbe potuto prevenire quell’errore!)
+\end{itemize}
+
+\subsection{Buoni messaggi di errore: livelli multipli}
+I messaggi di errore sono utili sia per gli utenti che per il personale tecnico.
+\begin{itemize}
+    \item Gli utenti normalmente non comprendono dettagli tecnici (es: codici di errore o stack trace), ma il personale tecnico può averne bisogno per la risoluzione dei problemi
+    \item I messaggi di errore possono dover contenere entrambi i livelli di informazione
+\end{itemize}
+Spesso è preferibile separare le viste dei diversi livelli:
+\begin{itemize}
+    \item Gli utenti normali non sono intimiditi da messaggi strani
+    \item Il personale tecnico può accedere alle informazioni di troubleshooting
+    \item Le finestre di errore possono includere link a siti di supporto
+\end{itemize}
+
+\subsection{Prevenire gli errori}
+Ancora meglio che avere buoni messaggi di errore, è evitare gli errori!
+Cerca di non mettere gli utenti in situazioni soggette a errore.
+\begin{itemize}
+    \item Se chiedi all’utente di digitare il nome di una città, c’è il rischio di errori di ortografia
+    \item Se l’utente deve inserire un intervallo di date nel futuro, formattato in modo specifico, c’è il rischio che non formatti correttamente la data o inserisca una data non valida
+\end{itemize}
+Progetta la UI per evitare (o minimizzare) questi errori: non è solo positivo per l’usabilità, ma significa anche meno lavoro per formalizzare i casi d’uso e meno codice per gestire situazioni di errore!
+
+\section{Tipi di errori}
+Secondo Don Norman, esistono due categorie di errori:
+\begin{enumerate}
+    \item \textbf{Slips}: l’utente intende eseguire un’azione, ma ne compie un’altra
+    \begin{itemize}
+        \item Premere il tasto «Invio» invece di «Backspace»
+        \item Cliccare sul pulsante «Minimizza» invece di «Massimizza»
+    \end{itemize}
+    \item \textbf{Mistakes}: l’utente forma obiettivi non appropriati per il problema/compito corrente
+    \begin{itemize}
+        \item Il responsabile di un sito e-commerce vuole eliminare tutti gli articoli di una certa categoria. Crede che eliminando la categoria verranno eliminati anche gli articoli associati. In realtà, gli articoli vengono spostati implicitamente nella categoria «Altro».
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Tipi di errori: Slips}
+Se gli utenti formano obiettivi corretti, ma sbagliano l’esecuzione, hanno commesso uno \textit{slip}.
+Gli slip derivano tipicamente da comportamenti automatici.
+Sono più frequenti nei comportamenti esperti (gli utenti prestano più attenzione quando stanno ancora imparando).
+Gli slip sono spesso «errori di cattura»: quando due sequenze di azioni hanno un prefisso comune, e una viene usata molto più spesso dell’altra, gli utenti finiscono inconsciamente per seguire la sequenza più frequente, anche se volevano eseguire quella meno frequente.
+Gli slip sono il motivo per cui permettere la facile reversibilità delle azioni è generalmente preferibile rispetto a fare affidamento solo su una finestra di conferma.
+
+\subsection{Tipi di errori: Mistakes}
+\begin{itemize}
+    \item I mistake sono molto più critici
+    \item Spesso derivano dal fatto che l’utente ha formato un modello mentale errato del sistema
+    \item Possono essere molto più difficili da rilevare (e quindi più pericolosi!)
+    \item Ripensa all’esempio precedente:
+    \begin{itemize}
+        \item Il responsabile di un sito e-commerce vuole eliminare tutti gli articoli di una certa categoria. Crede che eliminando la categoria verranno eliminati anche gli articoli associati. In realtà, gli articoli vengono spostati implicitamente nella categoria «Altro».
+        \item Quando se ne accorgerà?
+    \end{itemize}
+\end{itemize}
+
+\subsection{Aiuto e documentazione}
+Idealmente, un sistema dovrebbe essere così facile da usare da non richiedere aiuto o documentazione aggiuntiva.
+Questo obiettivo purtroppo non è sempre raggiungibile. A parte i sistemi veramente «walk-up-and-use», la maggior parte delle UI ha abbastanza funzioni da giustificare un manuale e possibilmente un sistema di aiuto.
+Un manuale può essere utile anche agli utenti regolari per acquisire maggiore competenza e aumentare la produttività.
+Nota: avere un buon manuale e sistema di aiuto non riduce i requisiti di usabilità! «È tutto spiegato nel manuale!» non è una buona scusa per una UI poco usabile!
+
+\subsection{La verità fondamentale sui manuali utente}
+Gli utenti non leggono i manuali utente.
+Preferiscono dedicare tempo ad attività che li fanno sentire produttivi.
+Tipicamente iniziano a usare il sistema senza aver letto le istruzioni.
+Corollario:
+\begin{itemize}
+    \item Se gli utenti vogliono leggere il manuale, probabilmente sono in difficoltà e hanno bisogno di aiuto immediato
+    \item I manuali online con ricerca orientata ai compiti e funzioni di ricerca personalizzata sono particolarmente utili in questi casi
+\end{itemize}
+
+\subsection{Puntare all'usabilità universale}
+Cerca l’usabilità per tutti! Bisogna considerare:
+Differenze tra utenti principianti ed esperti, fasce d’età, disabilità, variazioni internazionali.
+Progettare per tutti non significa ottenere un prodotto meno efficace.
+Spesso molte categorie di utenti beneficiano di accorgimenti pensati per una categoria specifica.
+Pensa alle rampe sui marciapiedi! (\href{https://en.wikipedia.org/wiki/Curb_cut_effect}{curb cut effect})
+
+\subsection{Progettare dialoghi che portino a una conclusione}
+Le sequenze di azioni dovrebbero essere organizzate in gruppi con inizio, sviluppo e fine.
+Un feedback informativo al termine di un gruppo dovrebbe dare all’utente soddisfazione, senso di sollievo, e indicare che può prepararsi al prossimo gruppo di azioni.
+Ad esempio, i siti e-commerce guidano i clienti attraverso una serie di passaggi chiari:
+\begin{itemize}
+    \item Aggiunta degli articoli al carrello
+    \item Specifica del metodo di pagamento, indirizzo di consegna, ecc.
+    \item Pagamento
+\end{itemize}
+
+\section{Letture e riferimenti}
+\begin{enumerate}
+    \item Shneiderman, B., \& Plaisant, C. (2010). Designing the user interface: strategies for effective human-computer interaction. Pearson Education.
+    \item Molich, R., \& Nielsen, J. (1990). Improving a human-computer dialogue. Communications of the ACM, 33(3), 338-348.\\
+    \href{https://dl.acm.org/doi/10.1145/77481.77486}{https://dl.acm.org/doi/10.1145/77481.77486}
+    \item Holcomb, R., \& Tharp, A. L. (1991). What users say about software usability. International Journal of Human‐Computer Interaction, 3(1), 49-78.\\
+    \href{https://doi.org/10.1080/10447319109525996}{https://doi.org/10.1080/10447319109525996}
+    \item Polson, P. G., \& Lewis, C. H. (1990). Theory-based design for easily learned interfaces. Human–Computer Interaction, 5(2-3), 191-220.\\
+    \href{https://doi.org/10.1080/07370024.1990.9667154}{https://doi.org/10.1080/07370024.1990.9667154}
+    \item Carroll, J. M., \& Rosson, M. B. (1992). Getting around the task-artifact cycle: How to make claims and design by scenario. ACM Transactions on Information Systems (TOIS), 10(2), 181-212.\\
+    \href{https://dl.acm.org/doi/abs/10.1145/146802.146834}{https://dl.acm.org/doi/abs/10.1145/146802.146834}
+    \item Nielsen, J. (1994, April). Enhancing the explanatory power of usability heuristics. In Proceedings of the SIGCHI conference on Human Factors in Computing Systems (pp. 152-158).\\
+    \href{https://dl.acm.org/doi/10.1145/191666.191729}{https://dl.acm.org/doi/10.1145/191666.191729}
+\end{enumerate}
