@@ -1,2 +1,0 @@
-DELETE http://localhost:3000/todos/6 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoibHVpZ2kiLCJpYXQiOjE3MDQxMDExMTksImV4cCI6MTcwNDE4NzUxOX0.ITnpiEQAdNW1J2NLlvxhz3RpWAwpcIA5iRJbSW7MxyM
