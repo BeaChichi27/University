@@ -1,0 +1,130 @@
+% !TeX root = main.tex
+% !TeX program = pdflatex
+% !TeX options = -synctex=1
+\documentclass[a4paper]{report}
+\usepackage{pdfpages}
+\newcounter{insertpages}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[italian]{babel}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{ulem}
+\usepackage{enumitem}
+\usepackage{algorithm}
+\usepackage{placeins}
+\usepackage{algpseudocode}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{accsupp}
+\usepackage[margin=50pt]{geometry}
+\usepackage{pdfpages}
+
+\title{Ingegneria del Software}
+\author{Beatrice Chiara Morgillo}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\include{capitoli/Lezione2}
+\include{capitoli/Lezione3}
+\include{capitoli/Lezione4}
+\include{capitoli/Lezione5}
+\include{capitoli/Lezione6}
+\include{capitoli/Lezione8}
+\includepdf[pages=-, addtotoc={
+1, chapter, 1, Lezione 9: Software Design: System Design, L2:1,
+1, section, 1, Progettazione di un sistema, L2:2,
+2, subsection, 1, Scopo del System Design, L2:3,
+5, section, 1, System Design, L2:4,
+6, subsection, 1, Attività di system design, L2:5,
+8, subsection, 1, Identificare gli obiettivi qualitativi del sistema, L2:6,
+9, subsection, 1, Criteri di design, L2:7,
+10, subsection, 1, Compromessi di design, L2:8,
+14, section, 1, Concetti di base di buon design, L2:9,
+15, subsection, 1, Anticipare, L2:10,
+16, subsection, 1, Decomposizione, L2:11,
+18, subsection, 1, Modellazione di sottosistemi, L2:12,
+19, subsection, 1, Servizi e interfacce di sottosistemi, L2:13,
+20, subsection, 1, Esempio, L2:14,
+22, subsection, 1, Osservazioni, L2:15,
+23, subsection, 1, Indipendenza funzionale, L2:16
+}]{capitoli/lezione9.pdf}
+\includepdf[pages=-, addtotoc={
+1, chapter, 1, Lezione 11: Regole di buon Software Design - La coesione, L3:1,
+1, section, 1, Coesione, L3:2,
+2, subsection, 1, Granularità della coesione, L3:3,
+3, subsection, 1, Single Responsibility Principle, L3:4,
+4, subsection, 1, Esempio, L3:5,
+8, subsection, 1, Benefici della coesione, L3:6,
+11, section, 1, Accoppiamento, L3:7,
+12, subsection, 1, Basso accoppiamento, L3:8,
+14, subsection, 1, Tipi di accoppiamento in O-O, L3:9,
+15, subsection, 1, Esempio, L3:10,
+16, subsection, 1, Spiegazione dell'esempio, L3:11,
+17, section, 1, Pensare alle interfacce, L3:12,
+18, subsection, 1, Esempio di paperboy, L3:13,
+20, subsection, 1, Problemi col codice, L3:14,
+22, subsection, 1, Migliorie al codice originale, L3:15,
+24, subsection, 1, Perché è meglio?, L3:16}]{capitoli/lezione11.pdf}
+\includepdf[page=1, addtotoc={
+1, subsection, 1, Quali sono gli svantaggi?, L3:17
+}]{capitoli/lezione12.pdf}
+\includepdf[pages={2-10}, addtotoc={
+2, chapter, 1, Lezione 12: Regole di buon Software Design - La legge di Demetra, L4:1,
+2, section, 1, La legge di Demetra, L4:2,
+4, subsection, 1, Violazioni alla legge, L4:3,
+5, subsection, 1, Eliminare il codice di navigazione, L4:4,
+6, subsection, 1, Design guidato dalla responsabilità, L4:5,
+7, section, 1, Le carte CRC, L4:6,
+9, subsection, 1, Conseguenze, L4:7,
+10, subsection, 1, Localizzare le modifiche, L4:8
+}]{capitoli/lezione12.pdf}
+\include{capitoli/lezione10}
+\include{capitoli/lezione13}
+\include{capitoli/lezione14}
+\include{capitoli/lezione15.tex}
+\include{capitoli/lezione17.tex}
+\includepdf[pages={11-45}, addtotoc={
+11, chapter, 1, Lezione 20: Software Design: Architetture Software, L820,
+11, section, 1, Architetture, L821,
+13, subsection, 1, Definizione dell'architettura, L822,
+14, section, 1, Identificazione di sottosistemi, L823,
+15, subsection, 1, Design Principle: Divide and conquer, L824,
+16, subsection, 1, Ways of dividing a software system, L825,
+18, subsection, 1, Layer, L826,
+19, subsection, 1, Macchina Virtuale (Dijkstra), L827,
+20, subsection, 1, Architettura Chiusa, L828,
+23, subsection, 1, Architettura Aperta, L829,
+25, section, 1, Principali Architetture, L830,
+26, subsection, 1, Architettura Client-server, L831,
+28, subsection, 1, Principali Architetture Software, L832,
+29, subsection, 1, Repository Architecture, L833,
+31, subsection, 1, Esempio di Repository Architecture, L834,
+32, subsection, 1, Vantaggi dell'architettura a repository, L835,
+33, subsection, 1, Svantaggi dell'architettura a repository, L836,
+34, subsection, 1, Layered Architecture, L837,
+35, subsection, 1, Esempio Layered Architecture, L838,
+38, subsection, 1, Architetture three-tier - I, L839,
+40, subsection, 1, Vantaggi di architetture three-tier, L840,
+43, subsection, 1, Vantaggi di architetture three-tier, L841,
+44, subsection, 1, Svantaggi di architetture three-tier, L842
+}]{esempi/lezione20.pdf}
+\includepdf[pages=-, addtotoc={
+1, chapter, 1, Lezione 21: MVC, L91,
+2, section, 1, Struttura di un'app software, L92,
+3, section, 1, Model-View-Controller, L93,
+4, subsection, 1, Struttura e responsabilità, L94,
+6, subsection, 1, Interazioni fondamentali, L95,
+8, subsection, 1, Considerazioni, L96,
+9, subsection, 1, MVC e qualità del software, L97,
+11, subsection, 1, MVC ed eventi in Java, L98,
+13, subsection, 1, Esempio, L99,
+14, subsection, 1, Applicazioni e livelli, L910,
+19, subsection, 1, MVC per Classi di Dominio e Widget, L911
+}]{esempi/lezione21.pdf}
+\end{document}

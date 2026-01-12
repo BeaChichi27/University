@@ -1,0 +1,262 @@
+\chapter{Lezione 13: Modelli e teorie in HCI}
+\subsection{Cos'è un modello?}
+Un modello è una semplificazione (astrazione) della realtà
+\begin{itemize}
+\item Una mappatura perfetta della realtà non è un modello (e non è utile!)
+\item Precisione vs generalità
+\end{itemize}
+«Tutti i modelli sono sbagliati, ma alcuni sono utili»
+I modelli ci permettono di:
+\begin{itemize}
+\item Rappresentare e ragionare su (aspetti di) fenomeni di interesse
+\item Anticipare (prevedere) risultati
+\end{itemize}
+
+\section{Modelli e teorie HCI}
+Nell'HCI, i modelli e le teorie mirano a spiegare come gli esseri umani interagiscono con
+i computer.
+I modelli e le teorie HCI possono essere classificati come:
+\begin{itemize}
+\item \textbf{Descrittivi}: mirano a sviluppare una terminologia coerente e tassonomie utili
+\item \textbf{Esplicativi}: descrivono sequenze di eventi, possibilmente con relazioni causali. Es.: le sette fasi dell'azione di Norman
+\item \textbf{Predittivi}: mirano a consentire il confronto di alternative di design basate su
+previsioni numeriche di velocità o errori
+\item \textbf{Prescrittivi}: offrono linee guida ai designer per prendere decisioni
+\end{itemize}
+
+\subsection{Il modello a tre stati dell'input grafico}
+Proposto da Will Buxton nel 1990 [1]
+Descrive l'input grafico con dispositivi di puntamento
+Diverse tecnologie (mouse, trackpad, tablet con stilo, ecc...)
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{immagini/lezione13/1.png}
+\caption{Descrizione di Buxton}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{immagini/lezione13/2.png}
+\caption{Operazioni di trascinamento con un mouse (a sinistra) e con un touchpad lift-and-tap (a destra) (tratto da [1])}
+\end{figure}
+
+\subsection{Il modello di Guiard dell'abilità bimanuale}
+Molte interazioni sono asimmetriche rispetto alla mano sinistra/destra
+Il modello di Guiard descrive ruoli e azioni delle mani preferita/non preferita
+Non preferita:
+\begin{itemize}
+\item Guida la mano preferita
+\item Definisce il quadro di riferimento spaziale per la mano preferita
+\item Esegue movimenti grossolani
+\end{itemize}
+Preferita:
+\begin{itemize}
+\item Segue la mano non preferita
+\item Lavora all'interno del quadro di riferimento stabilito dalla mano non preferita
+\item Esegue movimenti fini
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{immagini/lezione13/3.png}
+\caption{Interazione a due mani. (Schizzo di Shawn Zhang)}
+\end{figure}
+
+L'artista acquisisce il modello con la mano sinistra (la mano non preferita guida).
+Il modello viene manipolato sullo spazio di lavoro (movimento grossolano, definisce il quadro di riferimento).
+Lo stilo viene impugnato nella mano destra (la mano preferita segue) e portato in prossimità del modello (lavora all'interno del quadro di riferimento stabilito dalla mano non preferita).
+Ha luogo lo schizzo (la mano preferita esegue movimenti precisi).
+\section{Il Modello del Processore Umano (MHP)}
+È un modello predittivo a priori, può fornire approssimazioni delle azioni dell'utente prima che utenti reali siano coinvolti nel processo di test (e prima che l'interfaccia utente sia anche solo implementata!)
+Un essere umano è modellato da un insieme di memorie e processori che
+funzionano secondo un insieme di principi
+Modello discreto e sequenziale
+Processori percettivi, cognitivi e
+motori
+Diversi tipi di memoria
+Parametri del modello:
+\begin{itemize}
+\item Tempi di ciclo del processore: $\tau$
+\item Tempo di decadimento della memoria: $\delta$
+\item Capacità della memoria: $\mu$
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{immagini/lezione13/4.png}
+\caption{Parametri del modello}
+\end{figure}
+
+\subsection{MPH: Memorie}
+\textbf{Memoria di Lavoro} (WM) è un sottoinsieme di elementi «attivati» (chunk)
+dalla \textbf{Memoria a Lungo Termine} (LTM)
+\begin{itemize}
+\item I chunk possono essere composti da unità più piccole come lettere in una parola
+\item Un chunk potrebbe anche consistere in diverse parole, come in una frase ben nota
+\end{itemize}
+$\mu_{LTM} = \infty$ e $\delta_{LTM} = \infty$
+$\mu_{WM} = 7 \pm 2$ chunk
+$\delta_{WM} = 7 \pm 2$ s
+\begin{itemize}
+\item Il tempo di decadimento per WM varia ampiamente in base al numero di chunk memorizzati
+\item $\delta_{WM}$ 1 chunk = $73 \pm 53$ s
+\item $\delta_{WM}$ 3 chunk = $7 \pm 2$ s
+\end{itemize}
+
+\subsection{Percezione di stimoli congruenti e incongruenti}
+I tempi di percezione sono influenzati anche dalla natura degli stimoli
+Per esempio, c'è un ritardo significativo nel tempo di reazione (effetto Stroop)
+tra stimoli congruenti e incongruenti.
+
+\includepdf[pages=-, addtotoc={1, subsection, 1, Perché usare l'MPH?, L5:1, 2, subsection, 1, Esempio, L5:2}]{esempi/lezione13.pdf}
+
+\section{Modello GOMS}
+Goals (Obiettivi), Operators (Operatori), Methods (Metodi), Selection rules (Regole di selezione)
+Assunzioni:
+\begin{itemize}
+\item L'interazione con un sistema è risoluzione di problemi
+\item Scomporre l'interazione in sottoproblemi
+\item Determinare gli obiettivi per «affrontare» il problema
+\item Specificare la sequenza di operazioni utilizzate per raggiungere gli obiettivi
+\item I valori di tempo possono essere assegnati a ciascuna operazione
+\end{itemize}
+
+\begin{enumerate}
+\item[a] Goals (Obiettivi): Ciò che l'utente vuole ottenere (es., "avviare la funzione di utilità corretta").
+\item[b] Methods (Metodi): Possibili sequenze alternative di operatori utilizzate per raggiungere l'obiettivo.
+\item[c] Selection rules (Regole di selezione): Criteri per scegliere tra diversi metodi.
+\item[d] Operators (Operatori): Azioni di base eseguite dall'utente (es., "spostare il mouse", "fare clic", "controllare l'impostazione").
+\end{enumerate}
+
+\subsection{GOMS: Esempio}
+Obiettivo: eliminare una parola in un editor di documenti
+Regola di selezione: se il cursore è alla fine della parola da eliminare, usa il Metodo A, altrimenti
+usa il Metodo B
+
+\begin{enumerate}
+\item Metodo A:
+\begin{itemize}
+\item Premere il tasto «backspace».
+\item Controllare se la parola è stata eliminata e tornare all'operazione precedente se necessario.
+\end{itemize}
+\item Metodo B:
+\begin{itemize}
+\item Spostare il cursore del mouse sulla parola.
+\item Eseguire un doppio clic.
+\item Premere il tasto «backspace».
+\end{itemize}
+\end{enumerate}
+
+\subsection{Keyboard Level Model (KLM)}
+KLM è una delle varianti più semplici di GOMS
+Si concentra sul comportamento osservabile: Tasti, movimenti del mouse, ...
+Assume prestazioni prive di errori
+Operatori comuni e i tempi tipici corrispondenti:
+\begin{itemize}
+\item K (Keystroke - Pressione tasto): 0,2 secondi (200 ms)
+\item P (Pointing with Mouse - Puntamento con il mouse): 1,1 secondi (1100 ms)
+\item B (Pressing/holding/releasing mouse button - Premere/tenere/rilasciare il pulsante del mouse): 0,1 secondi (100 ms)
+\item H (Homing Hands - Posizionamento delle mani): 0,4 secondi (400 ms)
+\item M (Mental Preparation - Preparazione mentale): 1,2 secondi (1200 ms)
+\item R (System Response - Risposta del sistema): Variabile; tipicamente intorno a 0,1 secondi (100 ms)
+\end{itemize}
+
+\includepdf[pages=-, addtotoc={1, subsection, 1, Esempio KLM: rimozione di un file, L5:3}]{esempi/lezione13-1.pdf}
+
+\section{La Legge di Potenza della Pratica}
+Allen Newell (scienziato cognitivo) negli anni '80 analizzò i tempi di reazione
+per una varietà di compiti in esperimenti di apprendimento
+Notò che le curve di apprendimento ottenute in questi studi hanno una
+forma molto simile: quella di una \textbf{legge di potenza}
+\begin{itemize}
+\item Il tempo necessario per completare un compito dopo n prove ($T_n$) è vicino al
+tempo necessario per completare quel compito la prima volta ($T_1$) moltiplicato per $n^{-a}$
+$T_n \approx T_1 \cdot n^{-a}$
+\item $a$ è un parametro compreso tra 0,2 e 0,6 (generalmente $\sim$0,4)
+\end{itemize}
+
+Un utente ha impiegato 5 secondi per eseguire un
+determinato compito la prima volta che è stato
+esposto alla nuova interfaccia utente che abbiamo sviluppato
+Quante ripetizioni sarebbero necessarie a quell'utente
+per essere in grado di eseguire il
+compito in 2 secondi o meno?
+\begin{itemize}
+\item Possiamo calcolare una stima con la legge di potenza della pratica: $T_n \approx T_1 \cdot n^{-a}$
+\item Risolviamo per $n$, assumendo $a = 0,4$
+\item $2 s \leq 5 s \cdot n^{-0,4}$
+\item Per $n = 10$, otteniamo che $T_n \approx 1,99 s$
+\end{itemize}
+
+\section{Legge di Hick}
+La legge di Hick descrive il tempo necessario a una persona per prendere una decisione
+tra un insieme di possibili scelte.
+La legge di Hick afferma che il tempo $T$ necessario per raggiungere una decisione aumenta
+logaritmicamente con il numero di scelte.
+Nel caso di alternative ugualmente probabili:
+$T = a + b \cdot \log_2(n + 1)$
+\begin{itemize}
+\item $n$ è il numero di scelte
+\item $a$ e $b$ sono parametri che dipendono dalle condizioni del contesto (es.: il modo
+in cui le scelte sono presentate, la familiarità dell'utente,...)
+\end{itemize}
+
+\subsection{Applicazione della Legge di Hick}
+Quale modo è più veloce per selezionare tra 64 opzioni?
+\begin{itemize}
+\item Menu a un livello 1x64
+$T = a + b \cdot \log_2 64 = a + 6b$
+\item Menu a due livelli 4x16
+$T = a + b \cdot \log_2 4 + a + b \cdot \log_2 16 = 2a + 6b$
+\item Menu a due livelli 8x8
+$T = 2 \cdot (a + b \cdot \log_2 8) = 2a + 6b$
+\item Menu a tre livelli 4x4x4
+$T = 3 \cdot (a + b \cdot \log_2 4) = 3a + 6b$
+\item Menu a sei livelli 2x2x2x2x2x2
+$T = 6 \cdot (a + b \cdot \log_2 2) = 6a + 6b$
+\end{itemize}
+
+\section{Legge di Fitts}
+Modella il tempo per acquisire obiettivi nei movimenti mirati
+\begin{itemize}
+\item Raggiungere un controllo in una cabina di pilotaggio
+\item Muoversi attraverso un cruscotto
+\item Estrarre un elemento difettoso dal nastro trasportatore
+\item Fare clic su icone utilizzando un mouse
+\end{itemize}
+
+\subsection{Legge di Fitts – Indice di Difficoltà (ID)}
+L'indice di difficoltà di un compito di acquisizione di un obiettivo è definito come
+$ID = \log_2(A/W + 1)$
+\begin{itemize}
+\item $A$ è l'Ampiezza del movimento (distanza dall'inizio all'obiettivo)
+\item $W$ è la Larghezza dell'obiettivo (variabilità ammissibile)
+\end{itemize}
+
+\begin{figure}[htbp!]
+\centering
+\includegraphics[width=0.5\textwidth]{immagini/lezione13/5.png}
+\caption{Ampiezza e Larghezza}
+\end{figure}
+
+\subsection{Legge di Fitts – Tempi di Movimento}
+I Tempi di Movimento (MT) dipendono dall'Indice di Difficoltà ID
+$MT = a+b \cdot ID = a+b \cdot \log_2(A/W + 1)$
+I tempi di movimento dipendono anche dal sistema, dispositivo di puntamento, utente...
+Possono essere adattati a casi specifici con parametri non negativi $a$ e $b$
+È l'equazione di una linea retta ($y = mx + c$), dove $b$ è il gradiente
+MT aumenta linearmente con l'ID
+
+\subsection{Legge di Fitts: Applicazioni}
+Se dobbiamo ridurre il tempo necessario per eseguire un'azione di ricerca di un obiettivo
+O riduciamo l'Ampiezza del movimento (avvicinare l'obiettivo)
+O aumentiamo la Larghezza dell'obiettivo
+O potremmo lavorare su $a$ e $b$
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.5\textwidth]{immagini/lezione13/6.png}
+\caption{Variazioni di ID}
+\end{figure}
+
+\includepdf[pages=-, addtotoc={6, section, 1, Letture e referenze, L5:4}]{esempi/lezione13-2.pdf}

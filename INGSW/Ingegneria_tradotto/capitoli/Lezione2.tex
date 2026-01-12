@@ -1,0 +1,174 @@
+\chapter{Lezione 2: Processi e qualità del software}
+\section{Processi software}
+Un processo software è un insieme di attività correllate che conducono alla produzione di un sistema software. Non c'è un processo universale che funziona sempre, ma ce ne sono di molteplici e tutti includono, in qualche modo, delle attività fondamentali:
+\begin{enumerate}
+    \item \textbf{Specificazione software}: i vincoli funzionali e operativi vengono definiti.
+    \item \textbf{Implementazione software}: il software incontra i requisiti che devono essere prodotti.
+    \item \textbf{Validazione software}: il software dev'essere validato per verificare che segua i requisiti.
+    \item \textbf{Evolutzione del software}: il software deve evolvere per incontrare i cambiamenti necessari.
+\end{enumerate}
+
+\subsection{I modelli di processo software}
+
+Un \textbf{modello di processo software} o \textbf{ciclo di vita di un sistema software} (sigla in inglese: SDLC) è una rappresentazione semplificata di un processo software.
+
+Un modello di processo software può interessarsi si una prospettiva particolare e ci sono dei modelli di processo molto generali, come il modello a cascata.
+
+\subsection{Il modello a cascata}
+I processi software consisteno di un numero di passaggi sequenziali, in un processo plan-driven, il risultato di ogni fase è un documento che viene approvato e la fase successiva non può iniziare se la precedente non è completa. I passi da seguire sono:
+\begin{enumerate}
+    \item \textbf{Ingegnerizzazione dei requisiti}.
+    \item \textbf{Design del sistema}.
+    \item \textbf{Design dell'UI e del software}. 
+    \item \textbf{Implementazione}.
+    \item \textbf{Testing}.
+    \item \textbf{Operazioni e manutenzione}.
+\end{enumerate}
+
+Questo modello rigido, che segue i un approccio che va in base alle previsioni ha senso per l'ingegnerizzazione dell'hardware, dove sono considerati anche gli alti costi di produzione, invece per lo sviluppo software questi passaggi possono sovrapporsi e dare informazioni a vicenda. Durante il design del sistema vengono identificati i problemi coi loro requisiti, durante l'implementazione vengono trovati i problemi col design del software e i requisiti possono cambiare.
+
+\section{Ingegnerizzazione dei requisiti}
+L'obiettivo è capire cosa dovrebbe fare il software (e non come dev'essere implementato). Viene fatta un'attenta analisi di cos'ha bisogno l'utente e del problema di dominio.
+\newline
+Vengono inclusi i clienti, gli utenti finali e gli ingegneri del software, in modo da avere come output principale un \textbf{documento che specifichi i requisiti software}.
+
+\section{Desing del sistema e del software/UI}
+L'obiettivo è avere un design adeguato della struttura del software e si sviluppa su due livelli diversi:
+\begin{itemize}
+    \item \textbf{Design di sistema}: l'architettura generale del sistema.
+    \begin{itemize}
+        \item Decomposizione in moduli e componenti.
+        \item Allocazione di funzionalità per i moduli e moduli per le componenti hardware.
+        \item Relazioni e collaborazioni tra i moduli definiti.
+    \end{itemize}
+    \item \textbf{Design della UI e del software}: dettagli su come implementare ogni modulo.
+    \begin{itemize}
+        \item include design di un'architettura software di basso livello.
+        \item include una prototipazione dell'UI.
+    \end{itemize}
+\end{itemize}
+Il risultato è un insieme di specificazioni di design, spesso formalizzate usando linguaggi di design come UML.
+\section{Implementazione}
+Il risultato è "tradurre" le specificazioni di design in un linguaggio/tecnologia di programmazione scelta. Non è una traduzione qualunque, ma una di \textbf{alta qualità} e il codice risultante dovrebbe essere \textbf{"clean"}.
+\section{Verificazione e validazione (V\&V)}
+Si usa per vedere se le implementazioni soddisfano appieno le necessità dell'utente.
+\begin{itemize}
+    \item \textbf{Verificazione}: sono domande per quanto riguarda la conformità del sistema con le sue specifiche.
+    \item \textbf{Validazione}: sono domande per verificare se il sistema incontra le aspettative del cliente.
+\end{itemize}
+\section{Operazioni e manutenzione}
+L'operazione si occupa di distribuire il sistema e renderlo installabile per il cliente, mettendolo effettivamente in uso. La manutenzione stabilisce che il software potrà cambiare in un certo punto, infatti le necessità del cliente possono cambiare, il contesto d'uso potrebbe e i bug che sono sfuggiti alla V\&V potrebbero emergere.
+\section{Qualità del software}
+Non c'è un principio unico di qualità, ma ci sono approcci e visioni diverse, lo standard che definisce la qualità del modelli software è dato dall'\href{https://www.iso.org/standard/78175.html}{ISO/IEC 25002}.
+Nello standard, il cocnetto di qualità del software è modellizzato tramite:
+\begin{itemize}
+    \item \textbf{Modello della qualità del prodotto}, composto da 9 caratteristiche relative alla qualità delle proprietà del prodotto. Le caratteristiche e le sottocaratteristiche fanno da riferimento del modello per la qualità dei prodotti da specificare, misurare e valutare.
+    \item \textbf{Modello della qualità-in-uso}, composto da 3 caratteristiche che influenzano gli stakeholder quando i prodotti o i sistemi sono usati in uno specifico contesto d'uso.
+\end{itemize}
+
+\section{Il modello ISO/IEC 25002}
+\subsection{Qualità del software: idoneità}
+L'\textbf{idoneità funzionale} è un grado per cui una componente o un sistema dà funzioni che incontrano le necessità confermate e implicate quando vengono usate sotto specifiche condizioni.
+\newline
+Queste caratteristiche sono composte da 3 sottocaratteristiche:
+\begin{itemize}
+    \item \textbf{Completezza funzionale}: un grado per cui le funzioni date coprono tutte le task specifiche e gli obiettivi dell'utente.
+    \item \textbf{Correttezza funzionale}: grado per cui il prodotto provvede risultati accurati quando usato degli utenti.
+    \item \textbf{Appropriatezza funzionale}: grado per cui le funzioni facilitano il completamento di task e obiettivi specifici.
+\end{itemize}
+
+\subsection{Affidabilità}
+L'\textbf{affidabilità} valuta come il sistema performa sotto condizioni specifiche per un periodo di tempo specifico.
+Questa caratteristica è composta dalle seguenti sottocaratteristiche:
+\begin{itemize}
+    \item \textbf{Impeccabilità}: grado per cui un sistema performa specifiche funzioni senza problemi per una normale operazione.
+    \item \textbf{Disponibilità}: grado per cui un sistema è operativo e accessibile quando viene richiesto il suo utilizzo.
+    \item \textbf{Tolleranza ai problemi}: grado per cui il sistema opera come deve nonostante la presenza di problemi lato hardware o software.
+    \item \textbf{Recuperabilità}.
+\end{itemize}
+
+\subsection{Efficienza}
+L'\textbf{efficienza} rappresenta il grado con cui un prodotto performa le sue funzioni entro limiti specifici delle risorse, ed è efficiente nell'uso delle risorse.
+\newline
+Questa caratteristica è composta dalle seguenti sottocaratteristiche:
+\begin{itemize}
+    \item \textbf{Comportamento nel tempo}: il grado per cui il tempo di risposta e i tassi di rendimento di un prodotto o sistema incontrano i requisiti.
+    \item \textbf{Utilizzo delle risorse}: il grado per cui la quantità e i tipi delle risorse usate da un prodotto o sistema incontrano i requisiti.
+    \item \textbf{Capacità}: grado per cui i limiti massimi di un prodotto o parametro di sistema incontrano i requisiti.
+\end{itemize}
+\subsection{Usabilità}
+Rappresenta il grado con cui s'interagisce con un prodotto o sistema da parte dell'utente.
+\newline
+Ha le seguenti sottocaratteristiche:
+\begin{itemize}
+    \item \textbf{Riconoscibilità}.
+    \item \textbf{Apprendibilità}.
+    \item \textbf{Operatività}.
+    \item \textbf{Protezione dell'utente dagli errori}.
+    \item \textbf{Inclusività}.
+\end{itemize}
+
+\subsection{Sicurezza}
+È il grado per cui un sistema si difende dagli attacchi maliziosi e protegge le informazioni, rinforzando i dati tramite adeguati meccanismi di autorizzazione.
+Include le seguenti sottocaratteristiche:
+\begin{itemize}
+    \item \textbf{Confidenzialità}: grado per cui un sistema assicura che i dati sono accessibili solo a chi ne è autorizzato all'accesso.
+    \item \textbf{Integrità}: grado per cui un sistema assicura che il suo stato e i suoi dati sono protetti da modificazioni o rimozioni non autorizzate.
+    \item \textbf{Non-ripudio}: grado per cui le azioni o eventi vengono dimostrati di prendere luogo in modo che gli eventi o le azioni possano non essere ripudiate dopo.
+    \item \textbf{Responsabilità}: grado per cui le azioni di un'entità possono essere tracciate unicamente da quell'entità.
+    \item \textbf{Autenticità}: grado per cui l'identità di un soggetto o risorsa puà essere mostrata a chi l'ha rivendicata.
+\end{itemize}
+
+\subsection{Compatibilità}
+La \textbf{compatibilità} rappresenta il grado in cui un sistema può scambiare informazioni con altri prodotti, sistemi o componenti e/o svolgere le proprie funzioni richieste condividendo lo stesso ambiente e risorse comuni con altri sistemi. Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
+\begin{itemize}
+    \item \textbf{Coesistenza} - Grado in cui un prodotto può svolgere le proprie funzioni richieste in modo efficiente mentre condivide un ambiente e risorse comuni con altri prodotti, senza impatti negativi su nessun altro prodotto.
+    \item \textbf{Interoperabilità} - Grado in cui un sistema, prodotto o componente può scambiare informazioni con altri prodotti e utilizzare reciprocamente le informazioni che sono state scambiate.
+\end{itemize}
+\subsection{Manutenibilità}
+La \textbf{manutenibilità} rappresenta il grado di efficacia ed efficienza con cui un prodotto o sistema può essere modificato per migliorarlo, correggerlo o adattarlo ai cambiamenti dell'ambiente e ai requisiti. Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
+\begin{itemize}
+    \item \textbf{Modularità} - Grado in cui un software è composto da componenti discreti, in modo che una modifica a un componente abbia un impatto minimo sugli altri.
+    \item \textbf{Riutilizzabilità} - Grado in cui un software o un modulo può essere utilizzato come risorsa in più di un sistema.
+    \item \textbf{Modificabilità} - Grado in cui un prodotto o sistema può essere modificato in modo efficace ed efficiente senza introdurre difetti o degradare la qualità.
+    \item \textbf{Testabilità} - Grado in cui possono essere stabiliti criteri di test per un sistema e possono essere eseguiti test per determinare se tali criteri sono stati soddisfatti.
+\end{itemize}
+
+\subsection{Flessibilità}
+La \textbf{flessibilità} è il grado in cui un prodotto può essere adattato ai cambiamenti nei suoi requisiti, nei contesti di utilizzo o nell'ambiente operativo. Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
+\begin{itemize}
+    \item \textbf{Adattabilità} - Grado in cui un sistema può essere adattato in modo efficace ed efficiente a diversi hardware, software o altri ambienti operativi o di utilizzo.
+    \item \textbf{Scalabilità} - Grado in cui un sistema può gestire carichi di lavoro in crescita o in diminuzione o adattare la sua capacità per gestire la variabilità.
+    \item \textbf{Installabilità} - Grado di efficacia ed efficienza con cui un prodotto o sistema può essere installato e/o disinstallato con successo.
+    \item \textbf{Sostituibilità} - Grado in cui un prodotto può sostituire un altro prodotto software specificato per lo stesso scopo nello stesso ambiente.
+\end{itemize}
+\subsection{Sicurezza}
+La \textbf{sicurezza} rappresenta il grado in cui un prodotto evita uno stato in cui la vita umana, la salute, la proprietà o l'ambiente sono messi in pericolo. Questa caratteristica include, tra l'altro, le seguenti sotto-caratteristiche:
+\begin{itemize}
+    \item \textbf{Sicurezza in caso di guasto} - Grado in cui un prodotto può automaticamente collocarsi in una modalità operativa sicura, o tornare a una condizione sicura in caso di guasto.
+    \item \textbf{Identificazione del rischio} - Grado in cui un prodotto può identificare un corso di eventi o operazioni che possono portare a un rischio inaccettabile.
+    \item \textbf{Avviso di pericolo} - Grado in cui un sistema fornisce avvisi di rischi inaccettabili per le operazioni o i controlli interni in modo che possano reagire in tempo sufficiente.
+\end{itemize}
+\section{Modello della qualità-in-uso}
+Modello di qualità in uso, è composto da 3 caratteristiche (ulteriormente suddivise in sotto-caratteristiche) che possono influenzare gli stakeholder quando i prodotti o i sistemi vengono utilizzati in un contesto d'uso specifico. Misura il grado in cui un prodotto o un sistema può essere utilizzato da utenti specifici per soddisfare le loro esigenze al fine di raggiungere obiettivi specifici con efficacia, efficienza, assenza di rischi e soddisfazione in contesti d'uso specifici.
+\subsection{Usabilità}
+L'\textbf{usabilità} misura l'estensione in cui gli utenti possono raggiungere i loro obiettivi in modo efficiente e soddisfacente utilizzando il sistema. Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
+\begin{itemize}
+    \item \textbf{Efficacia} - Quanto bene gli utenti possono completare i loro compiti previsti utilizzando il sistema.
+    \item \textbf{Efficienza} - Le risorse (ad es., tempo, sforzo) necessarie per raggiungere i compiti.
+    \item \textbf{Soddisfazione} - Il comfort dell'utente e l'esperienza positiva durante l'utilizzo del sistema.
+\end{itemize}
+\subsection{Sicurezza}
+La \textbf{sicurezza} valuta la capacità del sistema di prevenire danni o pericoli per le persone, l'ambiente e gli interessi commerciali. Questa caratteristica è composta dalle seguenti sotto-caratteristiche: 
+\begin{itemize}
+    \item \textbf{Danno Commerciale}: Valuta quanto bene il sistema previene perdite finanziarie o danni all'attività.
+    \item \textbf{Salute e Sicurezza dell'Operatore}: Quanto bene il sistema protegge gli utenti dai rischi per la salute o dai pericoli per la sicurezza durante il suo utilizzo.
+    \item \textbf{Salute e Sicurezza Pubblica}: Previene rischi o danni per il pubblico generale attraverso l'uso o il funzionamento del sistema. \textbf{Danno Ambientale}: Il sistema dovrebbe evitare o ridurre al minimo gli impatti negativi sull'ambiente.
+\end{itemize}
+\subsection{Flessibilità}
+La \textbf{flessibilità} si riferisce alla capacità del sistema di adattarsi e operare efficacemente in contesti o ambienti diversi. Questa caratteristica è composta dalle seguenti sotto-caratteristiche:
+\begin{itemize}
+    \item \textbf{Conformità al contesto}: La capacità del sistema di adattarsi ai requisiti e ai vincoli specifici di diversi contesti.
+    \item \textbf{Estensibilità del contesto}: Il potenziale del sistema di espandersi o adattarsi a ambienti nuovi o in evoluzione senza modifiche significative.
+    \item \textbf{Accessibilità}: Cattura l'efficacia con cui il sistema può essere utilizzato da tutte le persone, comprese quelle con disabilità, in diversi ambienti.
+\end{itemize}
